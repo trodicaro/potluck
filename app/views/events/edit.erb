@@ -1,0 +1,12 @@
+<form id="new-event-form" action="/events" method="post">
+  <label for="event[name]">Name of event:</label>
+  <input type="text" name="event[name]" value="<%=@event.name%>" placeholder="Watch"><br>
+  <label for="event[description]">Description:</label>
+  <input type="text" name="event[description]" value="<%=@event.description%>" placeholder="antique, gold"><br>
+  <label for="event[location]">Location:</label>
+  <input type="text" name="event[location]" value="<%=@event.location%>" placeholder="20"><br>
+  <label for="event[date]">Date:</label>
+  <input type="text" name="event[date]" value="<%=@event.date%>" placeholder="YYYY-MM-DD"><br>
+  <label for="diet[name]">Diet-Friendly:</label>
+  <input type="text" name="diet[name]" value="<%=@diet.name%>" placeholder="YYYY-MM-DD"><br>
+  </form>

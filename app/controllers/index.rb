@@ -1,5 +1,8 @@
 get '/' do
-
-  erb :index
+  if current_user
+    redirect to("/events")
+  else
+    erb :'sessions/login'
+  end
 end
 

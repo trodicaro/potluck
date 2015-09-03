@@ -1,13 +1,54 @@
 .container {
-  margin: 20px auto;
+  /*margin: 20px auto;*/
+  margin-top: 100px;
   width: 800px;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  border: 1px solid #2B3246;
+  border-radius: 30px;
 }
+
+
 
 .container h1 {
   font-size: 17pt;
+}
 
+.new-event {
+  background-color: #2B3246;
+  color: #C3B3DF;
+  width: 30%;
+  border-radius: 30px;
+}
+
+.new-event h2 {
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.new-event input {
+  width: 60%;
+  color: #2B3246;
+}
+
+.new-event label {
+  width: 30%;
+}
+
+.new-event #submit {
+  margin-left: 25%;
+  margin-top: 20px;
+  background-color: #C3B3DF;
+  color: #2B3246;
+  border-radius: 30px;
+}
+
+.my-events a{
+  font-size: 1.5em;
+}
+
+body{
+  background-color: #68DAC3;
+  font-family: 'Play', sans-serif;
 }
 
 nav {
@@ -72,4 +113,15 @@ form.quirks {
   text-align: right;
   margin-right: 20px;
   width: 200px;
+}
+
+#stuff{
+  margin-left: 45%;
+  width: 10%;
+  height: 70px;
+  font-size: 2em;
+  margin-top: 5%;
+  border-radius: 20px;
+  background-color: #567CCB;
+  color: #2B3246;
 }

@@ -1,0 +1,10 @@
+<div class="container profile">
+  <div class="my-events">
+    <h2>All Events:</h2>
+    <ul>
+      <% Event.all.each do |event|%>
+      <li><a href="/events/<%=event.id%>"><%= event.name %> </a></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

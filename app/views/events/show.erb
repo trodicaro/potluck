@@ -1,0 +1,28 @@
+<div class="container">
+  <h2><%= @event.name %></h2>
+<p>Host:  <%= @event.host.username.capitalize %></p>
+  <% if @event.date %>
+    <p>Date: <%= @event.date.strftime("%m/%d") %><p>
+  <% end %>
+  <p>Location: <%= @event.location %><p>
+  <p>Foods: <%= @event.diet.name %><p>
+  <p>More about event: <%= @event.description %><p>
+  <form action="/events/<%=@event.id %>/invitations" method="post">
+  <button type="submit" class="btn btn-danger">Join the party</button>
+  </form>
+
+</div>
+
+<form action="/">
+<button type="button" class="btn btn-warning" id="stuff">Bring stuff</button>
+</form>
+
+
+<div class="container invitations">
+  <h2>Attendees</h2>
+  <% @event.guests.each do |guest| %>
+  <ul>
+    <li><%=guest.username.capitalize %></li>
+  </ul>
+  <% end %>
+</div>

@@ -1,0 +1,18 @@
+<div class="container"><h1>Sign up to party!</h1>
+
+<div class="errors">
+  <% if @user.errors %>
+    <% @user.errors.full_messages.each do |error| %>
+      <ul><%= error %></ul>
+    <% end %>
+  <% end %>
+</div>
+
+<form class="singup_form" action="/users" method="POST">
+  <label>Username</label><br>
+    <input type="text" name="user[username]" placeholder="J. Doe"><br>
+  <label>Password (must be 6 characters or more)</label><br>
+    <input type="password" name="user[password]" placeholder="******"><br>
+  <input type="submit" value="Sign up">
+</form>
+</div>

@@ -1,0 +1,28 @@
+<div class="container profile">
+  <div class="my-events">
+    <h2>My Events:</h2>
+    <ul>
+      <% current_user.events.each do |event|%>
+      <li><a href="/events/<%=event.id%>"><%= event.name %> </a></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+  <div class="container new-event">
+  <!-- <a href="/events/new">I want to party!</a> -->
+  <form id="new-event-form" action="/events" method="post">
+    <h2>I want to party!</h2>
+    <label for="event[name]">Name of event:</label>
+    <input type="text" name="event[name]" placeholder="Roxy's Birthday"><br>
+    <label for="event[description]">Description:</label>
+    <input type="text" name="event[description]" placeholder="Trolley Ride"><br>
+    <label for="event[location]">Location:</label>
+    <input type="text" name="event[location]" placeholder="Roxy's house"><br>
+    <label for="event[date]">Date:</label>
+    <input type="text" name="event[date]" placeholder="YYYY-MM-DD"><br>
+    <label for="diet[name]">Diet-friendly:</label>
+    <input type="text" name="diet[name]" placeholder="pescatarian"><br>
+    <input id="submit" type="submit" value="Party on">
+  </form>
+</div>
+
