@@ -1,7 +1,7 @@
 class Event < ActiveRecord::Base
   has_many  :invitations
   has_many  :guests, through: :invitations, source: :user
-  has_many  :items
+  has_many  :items, through: :invitations
   belongs_to :diet
 
 

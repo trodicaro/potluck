@@ -1,7 +1,8 @@
 class Item < ActiveRecord::Base
-  has_many :invitations
-  # has_one  :event, through: :invitations
-  belongs_to  :guest, class_name: "User"
+  belongs_to :invitation
+  has_one  :event, through: :invitation
+  has_one  :guest, through: :invitation, source: :user
   has_one     :diet
+
 
 end

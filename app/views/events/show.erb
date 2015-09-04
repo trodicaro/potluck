@@ -16,8 +16,20 @@
   <% end %>
 </div>
 
-<form action="/">
-<button type="button" class="btn btn-warning" id="stuff">Bring stuff</button>
+<div class="container party-items">
+  <h3>This is what we have so far:</h3>
+  <ul>
+    <% @event.items.each do |item| %>
+      <li id="item"><%=item.name.upcase %> <span id="bringer"><%= item.guest.username%></span></li>
+    <% end %>
+  </ul>
+</div>
+
+<form id="bring-item-form" action="/events/<%=@event.id%>/items" method="post">
+  <input type="text" name="item[name]" placeholder="Muffins">
+  <input type="number" name="item[quantity]" placeholder="8">
+  <!-- insert diet option -->
+<button type="submit" class="btn btn-warning" id="stuff">Bring stuff</button>
 </form>
 
 <div class="container invitations">
