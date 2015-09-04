@@ -7,16 +7,18 @@
   <p>Location: <%= @event.location %><p>
   <p>Foods: <%= @event.diet.name %><p>
   <p>More about event: <%= @event.description %><p>
-  <form action="/events/<%=@event.id %>/invitations" method="post">
-  <button type="submit" class="btn btn-danger">Join the party</button>
-  </form>
-
+  <% unless @event.guests.include?(current_user) %>
+    <form action="/events/<%=@event.id %>/invitations" method="post">
+    <button type="submit" class="btn btn-danger">Join the party</button>
+    </form>
+  <% else %>
+    <button type="button" class="btn btn-danger">See you there!</button>
+  <% end %>
 </div>
 
 <form action="/">
 <button type="button" class="btn btn-warning" id="stuff">Bring stuff</button>
 </form>
-
 
 <div class="container invitations">
   <h2>Attendees</h2>
