@@ -3,7 +3,14 @@
     <h2>My Events:</h2>
     <ul>
       <% current_user.events.each do |event|%>
-      <li><a href="/events/<%=event.id%>"><%= event.name %> </a></li>
+      <li><a href="/events/<%=event.id%>"><%= event.name %> </a>
+        <% if event.host == current_user %>
+        <form class="delete-button" action="/events/<%=event.id %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <button id="remove-item" type="submit" class="btn btn-danger">I can't host anymore</button>
+        </form>
+      <% end %>
+      </li>
       <% end %>
     </ul>
   </div>

@@ -12,7 +12,11 @@
     <button type="submit" class="btn btn-danger">Join the party</button>
     </form>
   <% else %>
-    <button type="button" class="btn btn-danger">See you there!</button>
+    <h2>You are attending!</h2>
+    <form action="/events/<%=@event.id %>/invitations" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <button type="submit" class="btn btn-danger">Cancel my RSVP</button>
+    </form>
   <% end %>
 </div>
 
@@ -20,7 +24,14 @@
   <h3>This is what we have so far:</h3>
   <ul>
     <% @event.items.each do |item| %>
-      <li id="item"><%=item.name.upcase %> <span id="bringer"><%= item.guest.username%></span></li>
+      <li id="item"><%=item.name.upcase %> <span id="bringer"><%= item.guest.username%></span>
+      <% if item.guest.id == current_user.id %>
+        <form class="delete-button" action="/events/<%=@event.id %>/items/<%=item.id%>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <button id="remove-item" type="submit" class="btn btn-danger">remove item</button>
+        </form>
+      <% end %>
+      </li>
     <% end %>
   </ul>
 </div>

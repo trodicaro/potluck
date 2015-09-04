@@ -4,5 +4,5 @@ class Item < ActiveRecord::Base
   has_one  :guest, through: :invitation, source: :user
   has_one     :diet
 
-
+  validates :name, presence: true
 end

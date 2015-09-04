@@ -20,3 +20,8 @@ get "/events/:id" do
   @event = Event.find(params[:id])
   erb :"/events/show"
 end
+
+delete "/events/:id" do
+  Event.find(params[:id]).destroy
+  redirect "/users/#{current_user.id}"
+end
